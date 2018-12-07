@@ -1,0 +1,24 @@
+package com.github.hejun.controller;
+
+import com.github.hejun.model.UserModel;
+import com.github.hejun.service.UserService;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping(value = "/user", produces = "application/json; charset=utf-8")
+public class UserController {
+    private UserService userService;
+
+    public UserController(UserService userService) {
+        this.userService = userService;
+    }
+
+    @GetMapping("/{prefix}")
+    public List<UserModel> getUsers(@RequestParam(value = "age", required = false) Integer age,
+                                    @PathVariable("prefix") String prefix) {
+
+        return this.userService.getUsers(prefix, age);
+    }
+}

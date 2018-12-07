@@ -1,0 +1,7 @@
+application-configuration:
+  users:
+    - name: Leo local
+      age: 10
+    - name: Tom local
+      age: 100
+

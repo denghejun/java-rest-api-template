@@ -1,0 +1,7 @@
+application-configuration:
+  users:
+    - name: Leo Test
+      age: 10
+    - name: Tom Test
+      age: 100
+
