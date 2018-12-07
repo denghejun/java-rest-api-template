@@ -1,5 +1,7 @@
 spring:
   profiles:
     active: local
+  cache:
+    type: ehcache
 server:
   port: 9998

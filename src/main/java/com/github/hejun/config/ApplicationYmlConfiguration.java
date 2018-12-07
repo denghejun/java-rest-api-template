@@ -10,7 +10,7 @@ import java.util.List;
 @Configuration
 @ConfigurationProperties(prefix = "application-configuration")
 @EnableConfigurationProperties
-public class ApplicationConfiguration {
+public class ApplicationYmlConfiguration {
     private List<UserModel> users;
 
     public List<UserModel> getUsers() {
