@@ -3,6 +3,8 @@ package com.github.hejun.service;
 import com.github.hejun.cache.CacheKey;
 import com.github.hejun.cache.CacheType;
 import com.github.hejun.config.ApplicationYmlConfiguration;
+import com.github.hejun.exception.AppException;
+import com.github.hejun.exception.ErrorCode;
 import com.github.hejun.model.UserModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CachePut;
@@ -32,6 +34,10 @@ public class UserService {
     }
 
     private List<UserModel> getUserModels(String prefix, Integer age, Integer count) {
+        if (age < 0) {
+            throw new AppException(ErrorCode.USER_NOT_FOUND);
+        }
+
         List<UserModel> models = this.applicationConfiguration.getUsers();
         for (UserModel model : models) {
             if (Objects.nonNull(age)) {
