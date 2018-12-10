@@ -3,5 +3,9 @@ spring:
     active: local
   cache:
     type: ehcache
+  activemq:
+    in-memory: true
+    pool:
+      enabled: false
 server:
   port: 9998
