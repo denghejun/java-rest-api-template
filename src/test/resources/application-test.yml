@@ -5,3 +5,10 @@ application-configuration:
     - name: Tom Test
       age: 100
 
+feature:
+  scheduling:
+    enable: false
+
+schedule:
+  cache:
+    refreshInterval: 10000

@@ -5,3 +5,10 @@ application-configuration:
     - name: Tom Prod
       age: 100
 
+feature:
+  scheduling:
+    enable: true
+
+schedule:
+  cache:
+    refreshInterval: 10000

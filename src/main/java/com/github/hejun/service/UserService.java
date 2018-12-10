@@ -23,15 +23,15 @@ public class UserService {
 
     @Cacheable(value = CacheType.THIRTY_SECONDS, key = CacheKey.USER_CACHE_KEY + " + #prefix")
     public List<UserModel> getUsers(String prefix, Integer age) {
-        return getUserModels(prefix, age);
+        return getUserModels(prefix, age, 0);
     }
 
     @CachePut(value = CacheType.THIRTY_SECONDS, key = CacheKey.USER_CACHE_KEY + " + #prefix")
-    public List<UserModel> refreshUserCache(String prefix, Integer age) {
-        return getUserModels(prefix, age);
+    public List<UserModel> refreshUserCache(String prefix, Integer age, Integer count) {
+        return getUserModels(prefix, age, count);
     }
 
-    private List<UserModel> getUserModels(String prefix, Integer age) {
+    private List<UserModel> getUserModels(String prefix, Integer age, Integer count) {
         List<UserModel> models = this.applicationConfiguration.getUsers();
         for (UserModel model : models) {
             if (Objects.nonNull(age)) {
@@ -39,6 +39,13 @@ public class UserService {
             }
 
             model.setName(prefix + ":" + model.getName());
+        }
+
+        for (int i = 0; i < count; i++) {
+            UserModel model = new UserModel();
+            model.setName("cache");
+            model.setAge(i);
+            models.add(model);
         }
 
         return models;
