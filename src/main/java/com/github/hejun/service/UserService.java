@@ -1,5 +1,6 @@
 package com.github.hejun.service;
 
+import com.github.hejun.aop.AutoLog;
 import com.github.hejun.cache.CacheKey;
 import com.github.hejun.cache.CacheType;
 import com.github.hejun.config.ApplicationYmlConfiguration;
@@ -23,18 +24,20 @@ public class UserService {
         this.applicationConfiguration = applicationConfiguration;
     }
 
+    @AutoLog(metaData = "meta1, meta2")
     @Cacheable(value = CacheType.THIRTY_SECONDS, key = CacheKey.USER_CACHE_KEY + " + #prefix")
     public List<UserModel> getUsers(String prefix, Integer age) {
         return getUserModels(prefix, age, 0);
     }
 
+    @AutoLog(metaData = "meta1, meta2")
     @CachePut(value = CacheType.THIRTY_SECONDS, key = CacheKey.USER_CACHE_KEY + " + #prefix")
     public List<UserModel> refreshUserCache(String prefix, Integer age, Integer count) {
         return getUserModels(prefix, age, count);
     }
 
     private List<UserModel> getUserModels(String prefix, Integer age, Integer count) {
-        if (age < 0) {
+        if (age != null && age < 0) {
             throw new AppException(ErrorCode.USER_NOT_FOUND);
         }
 
