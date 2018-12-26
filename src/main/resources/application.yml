@@ -9,3 +9,10 @@ spring:
       enabled: false
 server:
   port: 9998
+  context-path: /api
+auth:
+  jwt:
+    expireSeconds: 3000
+    key: xxxxxxxyyyy
+  openApi:
+    expireSeconds: 600
