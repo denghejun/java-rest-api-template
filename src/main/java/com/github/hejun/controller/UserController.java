@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+import static com.github.hejun.auth.RequestAttributeNames.USER_ID;
+
 @Slf4j
 @RestController
 @RequestMapping(value = "/user", produces = "application/json; charset=utf-8")
@@ -18,8 +20,10 @@ public class UserController {
     }
 
     @GetMapping("/{prefix}")
-    public List<UserModel> getUsers(@RequestParam(value = "age", required = false) Integer age,
-                                    @PathVariable("prefix") String prefix) {
+    public List<UserModel> getUsers(
+            @RequestAttribute(USER_ID) String userId,
+            @RequestParam(value = "age", required = false) Integer age,
+            @PathVariable("prefix") String prefix) {
 
         log.error("xxxxxxxxxxxx");
         return this.userService.getUsers(prefix, age);
