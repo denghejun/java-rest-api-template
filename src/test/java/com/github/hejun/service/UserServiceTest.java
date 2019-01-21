@@ -8,6 +8,7 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 
 import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 public class UserServiceTest extends BaseTest {
@@ -17,11 +18,12 @@ public class UserServiceTest extends BaseTest {
 
     @Test(expected = AppException.class)
     public void should_get_app_exception() {
+        UserService service =  mock(UserService.class);
         // given
         AppException e = new AppException(ErrorCode.SYSTEM_ERROR);
-        when(this.userService.getUsers(anyString(), anyInt())).thenThrow(e);
+        when(service.getUsers(anyString(), anyInt())).thenThrow(e);
 
         // when
-        this.userService.getUsers("", 0);
+        service.getUsers("", 0);
     }
 }

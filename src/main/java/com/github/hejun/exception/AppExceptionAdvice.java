@@ -16,14 +16,14 @@ public class AppExceptionAdvice {
     @Order(1)
     @ExceptionHandler(AppException.class)
     public ApiResponse<Object> handleAppException(AppException e) {
-        log.error("AppException", e);
+//        log.error("AppException", e);
         return ApiResponse.error(e.getMessage(), HttpStatus.BAD_REQUEST, e.getErrorCode());
     }
 
     @Order(2)
     @ExceptionHandler(Exception.class)
     public ApiResponse<Object> handleException(Exception e) {
-        log.error("unhandled exception", e);
+//        log.error("unhandled exception", e);
         return ApiResponse.error(Messages.SYSTEM_ERROR, HttpStatus.INTERNAL_SERVER_ERROR, ErrorCode.SYSTEM_ERROR);
     }
 }

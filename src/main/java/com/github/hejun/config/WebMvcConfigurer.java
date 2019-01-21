@@ -19,11 +19,11 @@ public class WebMvcConfigurer extends WebMvcConfigurerAdapter {
     @Override
     public void addInterceptors(final InterceptorRegistry registry) {
 
-        registry.addInterceptor(this.jwtInterceptor).addPathPatterns("/**").excludePathPatterns("/open/**",
-                "/login", "/fake/login", "/swagger-ui.html", "/swagger-resources/**");
-
-        registry.addInterceptor(this.openApiInterceptor).addPathPatterns("/**")
-                .addPathPatterns("/open/**");
+//        registry.addInterceptor(this.jwtInterceptor).addPathPatterns("/**").excludePathPatterns("/open/**",
+//                "/login", "/fake/login", "/swagger-ui.html", "/swagger-resources/**");
+//
+//        registry.addInterceptor(this.openApiInterceptor).addPathPatterns("/**")
+//                .addPathPatterns("/open/**");
 
         super.addInterceptors(registry);
     }

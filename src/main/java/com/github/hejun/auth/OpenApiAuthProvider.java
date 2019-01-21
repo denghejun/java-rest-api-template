@@ -54,7 +54,7 @@ public class OpenApiAuthProvider extends AuthProvider {
         try {
             requestDate = new DateTime(new Timestamp(Long.valueOf(timestamp)).getTime());
         } catch (Exception e) {
-            log.error("time format error", e);
+//            log.error("time format error", e);
         }
 
 

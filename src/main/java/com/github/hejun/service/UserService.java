@@ -12,6 +12,7 @@ import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -24,10 +25,17 @@ public class UserService {
         this.applicationConfiguration = applicationConfiguration;
     }
 
-    @AutoLog(metaData = "meta1, meta2")
-    @Cacheable(value = CacheType.THIRTY_SECONDS, key = CacheKey.USER_CACHE_KEY + " + #prefix")
+//    @AutoLog(metaData = "meta1, meta2")
+//    @Cacheable(value = CacheType.THIRTY_SECONDS, key = CacheKey.USER_CACHE_KEY + " + #prefix")
     public List<UserModel> getUsers(String prefix, Integer age) {
-        return getUserModels(prefix, age, 0);
+        List<UserModel> list = new ArrayList<>();
+        UserModel model = new UserModel();
+        model.setName("THE ONE");
+        model.setAge(999);
+        list.add(model);
+        return list;
+
+//        return getUserModels(prefix, age, 0);
     }
 
     @AutoLog(metaData = "meta1, meta2")
