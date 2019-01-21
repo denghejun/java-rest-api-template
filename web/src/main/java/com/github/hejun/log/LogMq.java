@@ -1,4 +1,4 @@
-package com.github.hejun.mq.log;
+package com.github.hejun.log;
 
 import org.apache.activemq.command.ActiveMQQueue;
 import org.springframework.context.annotation.Bean;

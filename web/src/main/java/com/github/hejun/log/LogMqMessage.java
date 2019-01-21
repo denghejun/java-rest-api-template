@@ -1,4 +1,4 @@
-package com.github.hejun.mq.log;
+package com.github.hejun.log;
 
 public class LogMqMessage {
     private String content;

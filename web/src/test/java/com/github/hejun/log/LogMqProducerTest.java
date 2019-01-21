@@ -1,4 +1,4 @@
-package com.github.hejun.mq.log;
+package com.github.hejun.log;
 
 import com.github.hejun.BaseTest;
 import org.junit.Test;

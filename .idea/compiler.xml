@@ -9,6 +9,15 @@
         <outputRelativeToContentRoot value="true" />
         <module name="ModuleA" />
       </profile>
+      <profile name="Annotation profile for java-rest-api-template" enabled="true">
+        <sourceOutputDir name="../target/generated-sources/annotations" />
+        <sourceTestOutputDir name="../target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="web" />
+      </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="host" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

@@ -1,4 +1,4 @@
-package com.github.hejun.mq.log;
+package com.github.hejun.log;
 
 import com.github.hejun.utils.JsonUtil;
 import lombok.extern.slf4j.Slf4j;
