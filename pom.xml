@@ -157,7 +157,7 @@
 
                         <!--<exclude>**/controller/*.class</exclude>-->
                         <!--<exclude>**/controller/FirstController.class</exclude>-->
-                        <!--<exclude>**/modulea/**/*</exclude>-->
+                        <exclude>**/modulea/**/*</exclude>
                         <!--<exclude>**/*Controller.*</exclude>-->
                     </excludes>
                 </configuration>
