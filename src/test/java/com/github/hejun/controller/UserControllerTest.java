@@ -71,7 +71,8 @@ public class UserControllerTest extends BaseTest {
         // when & then
         mockMvc.perform(post(requestUrl)
                 .contentType(MediaType.APPLICATION_JSON)
-                .headers(this.getRequestHeader()))
+                .headers(this.getRequestHeader())
+                .content("\"name\":\"json\",\"age\":100"))
                 .andDo(print())
                 .andExpect(status().is2xxSuccessful())
                 .andExpect(content().string(containsString("THE ONE TEST11111111")));
