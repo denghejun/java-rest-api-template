@@ -20,6 +20,6 @@ public class ATest {
 
     @Test
     public void check() {
-
+        aclass.getA();
     }
 }
