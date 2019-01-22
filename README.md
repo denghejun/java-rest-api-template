@@ -1,1 +1,1 @@
-#### AOP, MQ, Cache, Scheduling, Auto Configuration, Junit, Mock, Test
+#### AOP, MQ, Cache, Scheduling, Auto Configuration, Junit, Mock, Test, multiple module project, Integrate with jacoco code coverage check
