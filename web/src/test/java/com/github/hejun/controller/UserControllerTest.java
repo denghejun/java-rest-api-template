@@ -1,18 +1,14 @@
 package com.github.hejun.controller;
 
 import com.github.hejun.BaseTest;
-import com.github.hejun.Main;
 import com.github.hejun.model.UserModel;
 import com.github.hejun.service.UserService;
-import org.junit.Assert;
 import org.junit.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.mock.mockito.SpyBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.MvcResult;
 
 import java.util.ArrayList;
 import java.util.List;

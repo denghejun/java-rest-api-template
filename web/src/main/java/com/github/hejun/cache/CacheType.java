@@ -5,3 +5,4 @@ public final class CacheType {
     public static final String ONE_MINUTE = "oneMinute";
     public static final String INFINITY = "infinity";
 }
+

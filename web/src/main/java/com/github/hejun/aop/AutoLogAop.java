@@ -14,7 +14,11 @@ import java.util.Date;
 @Aspect
 @Slf4j
 public class AutoLogAop {
-    @Around("@annotation(com.github.hejun.aop.AutoLog)")
+    public AutoLogAop() {
+
+    }
+
+    @Around(value = "@within(com.github.hejun.aop.AutoLog) || @annotation(com.github.hejun.aop.AutoLog)")
     public Object autoLogAop(ProceedingJoinPoint pjd) throws Throwable {
         Method method = ((MethodSignature) pjd.getSignature()).getMethod();
         AutoLog autoLog = method.getAnnotation(AutoLog.class);
