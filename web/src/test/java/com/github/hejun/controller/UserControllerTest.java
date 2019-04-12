@@ -54,7 +54,7 @@ public class UserControllerTest extends BaseTest {
     }
 
     @Test
-    public void should_post_users_success_() throws Exception {
+    public void should_post_users_success_branch1() throws Exception {
         // given
         String requestUrl = "/user/post/xxx?age=9999";
         List<UserModel> list = new ArrayList<>();
