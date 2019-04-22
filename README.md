@@ -1,1 +1,2 @@
 #### AOP, MQ, Cache, Scheduling, Auto Configuration, Junit, Mock, Test, multiple module project, Integrate with jacoco code coverage check
+#### JWT + MD5 Sign(token + timestamp) to impl one time token verification

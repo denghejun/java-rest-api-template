@@ -75,6 +75,8 @@ public class OpenApiAuthProvider extends AuthProvider {
             return AuthProviderResponse.failed(ERROR_TIMESTAMP_INVALID);
         }
 
+        // this first predicate is the important,now.isAfter(requestDate), it proves that if someone copy the api link and
+        // send to backend, it will be expired automatically by this predicate
         DateTime now = DateTime.now();
         if (!(now.isAfter(requestDate) && now.isBefore(requestDate.plusSeconds(this.requestExpireSeconds)))) {
             return AuthProviderResponse.failed(ERROR_REQUEST_EXPIRED);
